@@ -1,0 +1,16 @@
+name: first github action
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step 1
+        uses: actions/checkout@v3
+      - name: step 2 install node modules
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: step 3 install dependencies
+        run: npm ci
+      - name: step 4 run tests
+        run: npm test
